@@ -69,5 +69,5 @@ to be used for controlling the state of the baloon.
 Style
 ===
 
-The style key holds js object that is applied to the modal wrapper itself. Here you can set the width.
-It is advisable not to set any height because they modal itself is responsive depending on the content it holds.
+The style key holds js object that is applied to the baloon wrapper itself. Here you can set the width.
+It is advisable not to set any height because the baloon itself is responsive depending on the content it holds.
