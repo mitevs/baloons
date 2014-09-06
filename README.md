@@ -58,7 +58,7 @@ The baloonFactory's getNewBaloon method gets a configuration object in which you
 The first one is the events and the second one is style.
 
 Events
-========
+-------
 
 * onInflate -- called when the baloon (modal) is inflated (opened).
 * onDeflate -- called when the baloon (modal) is deflated (closed).
@@ -67,12 +67,13 @@ Events
 to be used for controlling the state of the baloon.
 
 Style
-========
+-------
 
 The style key holds js object that is applied to the baloon wrapper itself. Here you can set the width.
 It is advisable not to set any height because the baloon itself is responsive depending on the content it holds.
 
 Notes
-=========
+--------
 In order to test the example you need to run it through http server rooted at the folder of the projects so that the directive template is correctly resolved. 
-*This example was tested with the help of the pythong http server module.*
+
+*This example was tested with the help of the python http server module.*
