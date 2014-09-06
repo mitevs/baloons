@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Baloon Test</title>
+	<link rel="stylesheet" href="css/baloons/baloon.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="ng-cloak" ng-app="MainApp" ng-controller="MainCtrl">
+		<baloon baloon-controller="baloonA">
+			<section class="padded-section">
+				<header class="header"><h3>Simple Modal A</h3></header>
+				<p class="body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam ipsa sapiente corporis dolorem ab ut molestias possimus commodi magni maiores iure ipsam amet at odio sunt voluptate temporibus rerum quos!
+				</p>
+			</section>
+
+			<footer class="footer">
+				<button
+					ng-click="baloonA.toggle();">Confirm</button>
+				<button
+					ng-click="baloonA.toggle();">Cancel</button>
+			</footer>
+		</baloon>
+
+		<baloon baloon-controller="baloonB">
+			<section class="padded-section">
+				<header class="header"><h3>Simple Modal B</h3></header>
+				<p class="body">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam ipsa sapiente corporis dolorem ab ut molestias possimus commodi magni maiores iure ipsam amet at odio sunt voluptate temporibus rerum quos!
+				</p>
+			</section>
+
+			<footer class="footer">
+				<button
+					ng-click="baloonB.toggle();">Confirm</button>
+				<button
+					ng-click="baloonB.toggle();">Cancel</button>
+			</footer>
+		</baloon>
+
+		<button ng-click="baloonA.toggle();">Toggle Baloon A</button>
+		<button ng-click="baloonB.toggle();">Tagool Baloon B</button>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular.min.js"></script>
+	<script src="js/baloons/directive/baloons.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
