@@ -3,20 +3,16 @@
 		this.isDeflated = true;
 
 		if(config){
-			if(config.events){
-				this.events = config.events;
-
-				if(config.events.autoDeflate === undefined){
-					this.events.autoDeflate = true;
-				}
-			}else{
-				this.events = {
-					autoDeflate: true
-				};
+			if(config.onInflate){
+				this.onInflate = config.onInflate;
 			}
 
-			if(config.style){
-				this.modalStyle = config.style;
+			if(config.onDeflate){
+				this.onDeflate = config.onDeflate;
+			}
+
+			if(config.autoDeflate){
+				this.autoDeflate = config.autoDeflate;
 			}
 		}
 
@@ -36,15 +32,16 @@
 			restrict: 'E',
 			replace: true,
 			transclude: true,
-			templateUrl: 'js/baloons/directive/templates/default.html',
+			templateUrl: 'templates/default.html',
 			scope: {
-				baloonController: '='
+				baloonController: '=',
+				claz: '@baloonClass'
 			},
 			link: function(scope, element, attrs){
 				if(scope.baloonController !== undefined){
 					//used to close dialog if the dimmed screen is set to close it
 					scope.deflateBaloon = function(e){
-						if(scope.baloonController.events.autoDeflate){
+						if(scope.baloonController.autoDeflate){
 							if(ng.element(e.target).hasClass('baloon-main')){
 								scope.baloonController.toggle(true);
 							}
@@ -57,10 +54,10 @@
 							return;
 						}
 
-						if(deflated && scope.baloonController.events.onDeflate){
-							scope.baloonController.events.onDeflate();
-						}else if(scope.baloonController.events.onInflate){
-							scope.baloonController.events.onInflate();
+						if(deflated && scope.baloonController.onDeflate){
+							scope.baloonController.onDeflate();
+						}else if(scope.baloonController.onInflate){
+							scope.baloonController.onInflate();
 						}
 					});
 				}

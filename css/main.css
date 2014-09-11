@@ -2,6 +2,10 @@
     display: none;
 }
 
+.baloon-mid{
+    width: 500px;
+}
+
 .padded-section {
     float: inherit;
     width: 100%;

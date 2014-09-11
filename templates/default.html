@@ -1,6 +1,8 @@
 <div class="baloon" ng-class="{'deflated': baloonController.isDeflated}">
     <div class="baloon-main" ng-click="deflateBaloon($event);">
-        <div class="baloon-outer">
+		{{claz}}
+
+        <div class="baloon-outer" ng-class="claz">
             <div class="baloon-inner" ng-style="baloonController.modalStyle">
                 <div ng-transclude></div>
             </div>
