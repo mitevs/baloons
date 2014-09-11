@@ -18,16 +18,11 @@ var module = ng.module('MyApp', ['baloons']);
 
 module.controller('MyCtrl', ['$scope', 'baloonFactory', function($scope, baloonFactory){
 	$scope.baloonInstance = baloonFactory.getNewBaloon({
-		events: {
-			onInflate: function(){
-				console.log('Baloon inflated');
-			},
-			onDeflate: function(){
-				console.log('Baloon deflated');
-			}
+		onInflate: function(){
+			console.log('Baloon inflated');
 		},
-		style: {
-			width: '350px'
+		onDeflate: function(){
+			console.log('Baloon deflated');
 		}
 	});
 }]);
@@ -54,8 +49,7 @@ Then you define the UI part with your content inside, here is an example:
 </baloon>
 ```
 
-The baloonFactory's getNewBaloon method gets a configuration object in which you define two keys.
-The first one is the events and the second one is style.
+The baloonFactory's getNewBaloon method gets a configuration object in which you define the events.
 
 Events
 -------
@@ -65,12 +59,6 @@ Events
 * autoDeflate -- true/false if the baloon is deflated on clicking outside it (clicking the dimmed screen). By default this is set to true.
 * toggle -- Predefined event that toggles the baloon, directly accessible through the instance, meant
 to be used for controlling the state of the baloon.
-
-Style
--------
-
-The style key holds js object that is applied to the baloon wrapper itself. Here you can set the width.
-It is advisable not to set any height because the baloon itself is responsive depending on the content it holds.
 
 Notes
 --------
