@@ -13,7 +13,7 @@ In this project you can find simple example of two modals that are controller by
 
 First you need to define the controller:
 
-```
+```js
 var module = ng.module('MyApp', ['baloons']);
 
 module.controller('MyCtrl', ['$scope', 'baloonFactory', function($scope, baloonFactory){
@@ -30,7 +30,7 @@ module.controller('MyCtrl', ['$scope', 'baloonFactory', function($scope, baloonF
 
 Then you define the UI part with your content inside, here is an example:
 
-```
+```html
 <baloon baloon-controller="baloonInstance">
 	<header>
 		<h3>Simple Modal</h3>
